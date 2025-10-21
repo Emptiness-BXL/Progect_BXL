@@ -5,45 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Мой Сайт{% endblock %}</title>
     <style>
-        body {
-            color: #000860;
-            background-color: #c8d6d8;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            color: #030062;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 18px;
-            margin-bottom: 15px;
+        :root { --bg:#e9eef2; --card:#ffffff; --text:#0b2253; --muted:#5a6b87; --accent:#3b82f6; --accent-2:#0ea5e9; --shadow:0 10px 30px rgba(2,8,20,.08); --radius:14px; }
+        * { box-sizing: border-box; }
+        html, body { height: 100%; }
+        body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif; color:var(--text); background:linear-gradient(180deg,#f6f9fc 0%,var(--bg) 100%); display:grid; place-items:center; padding:24px; }
+        .card { width:min(920px,92vw); background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); overflow:clip; border:1px solid rgba(2,8,20,.06); }
+        .hero { position:relative; padding:48px 28px 24px; text-align:center; background: radial-gradient(1200px 300px at 50% -40%, rgba(59,130,246,.13), transparent), linear-gradient(180deg, rgba(14,165,233,.08), transparent 60%); }
+        .title { margin:0 0 10px; font-size:clamp(24px,3.6vw,38px); letter-spacing:-.02em; font-weight:800; color: linear-gradient(180deg, #0f172a 0%, #0b1220 100%); }
+        .subtitle { margin:0 auto; max-width:60ch; color:var(--muted); }
+        .content { padding:24px; }
+        .list { display:grid; gap:12px; list-style:none; padding:0; margin:0 0 16px; }
+        .list li { padding:14px 16px; background:linear-gradient(180deg, #0f172a 0%, #0b1220 100%); border:1px solid rgba(2,8,20,.06); border-radius:12px; font-weight:600; }
+        .back { display:inline-block; margin-top:8px; padding:12px 16px; background: linear-gradient(180deg, #0f172a 0%, #0b1220 100%); border:1px solid rgba(2,8,20,.08); border-radius:10px; text-decoration:none; color:var(--text); font-weight:600; transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease; }
+        .back:hover { transform:translateY(-2px); border-color:rgba(59,130,246,.35); box-shadow:0 10px 22px rgba(2,8,20,.08); }
+        .footer { padding:18px 24px 28px; color:var(--muted); font-size:13px; text-align:center; }
+        .accent-bar { height:4px; width:100%; background:linear-gradient(90deg,var(--accent),var(--accent-2)); filter:saturate(110%); }
+        @media (prefers-color-scheme: dark) {
+            :root { --bg:#0b1220; --card:#0f172a; --text:#e5ecff; --muted:#99a7c2; --shadow:0 10px 30px rgba(0,0,0,.3); }
+            body { background: linear-gradient(180deg, #0f172a 0%, #0b1220 100%); }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>НАВЫКИ</h1>
-    </header>
-    <main>
-        <h1>Слабое программирование на Web</h1>
-        <h1>Слабое программирование на Unity</h1>
-        <h1>Хорош в играх</h1>
-        <li><a href = "/visit">Вернуться</a></li>
-    </main>
+    <div class="card">
+        <div class="hero">
+            <h1 class="title">НАВЫКИ</h1>
+            <p class="subtitle">Мои умения и сильные стороны</p>
+        </div>
+        <div class="accent-bar"></div>
+        <div class="content">
+            <ul class="list">
+                <li>Слабое программирование на Web</li>
+                <li>Слабое программирование на Unity</li>
+                <li>Хорош в играх</li>
+            </ul>
+            <a class="back" href="/visit2">Вернуться</a>
+        </div>
+        <div class="footer">© Ваш сайт</div>
+    </div>
 </body>
 </html>

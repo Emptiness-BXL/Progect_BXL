@@ -12,3 +12,12 @@ def skills(request):
 
 def me(request):
     return render(request, 'me.html')
+
+def visit1(request):
+    return render(request, 'visit.html')
+
+def visit2(request):
+    return render(request, 'visit.html')
+
+def visit3(request):
+    return render(request, 'visit.html')
